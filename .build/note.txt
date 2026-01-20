@@ -1,0 +1,2 @@
+Cập nhật:
+Bỏ check cert Active, cho phép nhập CCCD

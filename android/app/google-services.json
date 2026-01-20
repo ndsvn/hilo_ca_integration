@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "696271835857",
+    "project_id": "ecert-82485",
+    "storage_bucket": "ecert-82485.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696271835857:android:ab3d0a7e11d2fc7dfaabf0",
+        "android_client_info": {
+          "package_name": "vn.com.hiloca"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAmHRTP3OauPjLrehlIUDiYJ1v3ey5Uys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696271835857:android:d785d0a33451cdeffaabf0",
+        "android_client_info": {
+          "package_name": "vn.ecert"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAmHRTP3OauPjLrehlIUDiYJ1v3ey5Uys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
