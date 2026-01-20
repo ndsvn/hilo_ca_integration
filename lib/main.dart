@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:bot_toast/bot_toast.dart';
-import 'package:ecert/applinks.dart';
-import 'package:ecert/cores/theme/theme.src.dart';
-import 'package:ecert/generated/locales.g.dart';
-import 'package:ecert/routes/pages.dart';
-import 'package:ecert/shares/shares_src.dart';
+import 'package:hilo_ca_integration/applinks.dart';
+import 'package:hilo_ca_integration/cores/theme/theme.src.dart';
+import 'package:hilo_ca_integration/generated/locales.g.dart';
+import 'package:hilo_ca_integration/routes/pages.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 

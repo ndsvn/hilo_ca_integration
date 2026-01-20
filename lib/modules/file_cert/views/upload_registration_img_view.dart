@@ -1,5 +1,5 @@
-import 'package:ecert/base_utils/base_src.dart';
-import 'package:ecert/modules/guilde/register_cert.src.dart';
+import 'package:hilo_ca_integration/base_utils/base_src.dart';
+import 'package:hilo_ca_integration/modules/guilde/register_cert.src.dart';
 import 'package:flutter/material.dart';
 
 import '../../../cores/cores_src.dart';

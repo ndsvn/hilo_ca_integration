@@ -1,5 +1,5 @@
-import 'package:ecert/generated/locales.g.dart';
-import 'package:ecert/modules/verify/live_ness/live_ness_kyc.src.dart';
+import 'package:hilo_ca_integration/generated/locales.g.dart';
+import 'package:hilo_ca_integration/modules/verify/live_ness/live_ness_kyc.src.dart';
 import 'package:get/get_utils/get_utils.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
 

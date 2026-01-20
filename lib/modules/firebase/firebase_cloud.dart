@@ -4,8 +4,8 @@
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:device_info_plus/device_info_plus.dart';
 // import 'package:dio/dio.dart';
-// import 'package:ecert/generated/locales.g.dart';
-// import 'package:ecert/shares/utils/utils.src.dart';
+// import 'package:hilo_ca_integration/generated/locales.g.dart';
+// import 'package:hilo_ca_integration/shares/utils/utils.src.dart';
 // import 'package:get/get.dart';
 //
 // import '../../base_utils/controllers_base/base_controller.src.dart';

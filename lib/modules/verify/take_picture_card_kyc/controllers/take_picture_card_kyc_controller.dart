@@ -1,9 +1,9 @@
 import 'dart:typed_data';
 
 import 'package:camera/camera.dart';
-import 'package:ecert/base_utils/base_src.dart';
-import 'package:ecert/modules/modules_src.dart';
-import 'package:ecert/modules/verify/update_photo_information_kyc/update_photo_information_kyc.src.dart';
+import 'package:hilo_ca_integration/base_utils/base_src.dart';
+import 'package:hilo_ca_integration/modules/modules_src.dart';
+import 'package:hilo_ca_integration/modules/verify/update_photo_information_kyc/update_photo_information_kyc.src.dart';
 import 'package:screenshot/screenshot.dart';
 
 import '../../../../shares/shares_src.dart';

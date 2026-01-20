@@ -6,12 +6,12 @@ import 'package:asn1lib/asn1lib.dart';
 import 'package:dmrtd/dmrtd.dart';
 import 'package:dmrtd/extensions.dart';
 import 'package:dmrtd/src/proto/can_key.dart';
-import 'package:ecert/base_utils/base_src.dart';
-import 'package:ecert/cores/cores_src.dart';
-import 'package:ecert/generated/locales.g.dart';
-import 'package:ecert/modules/nfc_kyc/nfc/model/nfc_model.dart';
-import 'package:ecert/routes/routes.dart';
-import 'package:ecert/shares/shares_src.dart';
+import 'package:hilo_ca_integration/base_utils/base_src.dart';
+import 'package:hilo_ca_integration/cores/cores_src.dart';
+import 'package:hilo_ca_integration/generated/locales.g.dart';
+import 'package:hilo_ca_integration/modules/nfc_kyc/nfc/model/nfc_model.dart';
+import 'package:hilo_ca_integration/routes/routes.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
 import 'package:flutter/material.dart';
 
 class NfcDialogController extends BaseGetxController {

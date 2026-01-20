@@ -1,11 +1,11 @@
 import 'dart:typed_data';
 
 import 'package:dotted_border/dotted_border.dart';
-import 'package:ecert/base_utils/base_src.dart';
-import 'package:ecert/cores/cores_src.dart';
-import 'package:ecert/generated/locales.g.dart';
-import 'package:ecert/modules/verify/update_photo_information_kyc/update_photo_information_kyc.src.dart';
-import 'package:ecert/shares/shares_src.dart';
+import 'package:hilo_ca_integration/base_utils/base_src.dart';
+import 'package:hilo_ca_integration/cores/cores_src.dart';
+import 'package:hilo_ca_integration/generated/locales.g.dart';
+import 'package:hilo_ca_integration/modules/verify/update_photo_information_kyc/update_photo_information_kyc.src.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
 import 'package:flutter/material.dart';
 
 import '../../../guilde/register_cert.src.dart';

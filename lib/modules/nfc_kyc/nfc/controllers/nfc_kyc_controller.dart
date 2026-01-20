@@ -1,10 +1,10 @@
-import 'package:ecert/base_utils/base_src.dart';
-import 'package:ecert/cores/cores_src.dart';
-import 'package:ecert/generated/locales.g.dart';
-import 'package:ecert/modules/nfc_kyc/nfc_dialog/nfc_dialog.src.dart';
-import 'package:ecert/routes/routes.dart';
-import 'package:ecert/shares/shares_src.dart';
-import 'package:ecert/shares/widgets/bottom_sheet/bottom_sheet_check_nfc.dart';
+import 'package:hilo_ca_integration/base_utils/base_src.dart';
+import 'package:hilo_ca_integration/cores/cores_src.dart';
+import 'package:hilo_ca_integration/generated/locales.g.dart';
+import 'package:hilo_ca_integration/modules/nfc_kyc/nfc_dialog/nfc_dialog.src.dart';
+import 'package:hilo_ca_integration/routes/routes.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
+import 'package:hilo_ca_integration/shares/widgets/bottom_sheet/bottom_sheet_check_nfc.dart';
 import 'package:flutter/material.dart';
 
 class ScanNfcKycController extends BaseGetxController

@@ -1,11 +1,11 @@
 import 'dart:math';
 
 import 'package:camera/camera.dart';
-import 'package:ecert/base_utils/base_src.dart';
-import 'package:ecert/cores/cores_src.dart';
-import 'package:ecert/generated/locales.g.dart';
-import 'package:ecert/modules/verify/take_picture_card_kyc/take_picture_card_kyc.src.dart';
-import 'package:ecert/shares/shares_src.dart';
+import 'package:hilo_ca_integration/base_utils/base_src.dart';
+import 'package:hilo_ca_integration/cores/cores_src.dart';
+import 'package:hilo_ca_integration/generated/locales.g.dart';
+import 'package:hilo_ca_integration/modules/verify/take_picture_card_kyc/take_picture_card_kyc.src.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
 import 'package:flutter/material.dart';
 import 'package:screenshot/screenshot.dart';
 

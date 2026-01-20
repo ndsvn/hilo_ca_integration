@@ -1,4 +1,4 @@
-import 'package:ecert/modules/nfc_kyc/qr/qr.src.dart';
+import 'package:hilo_ca_integration/modules/nfc_kyc/qr/qr.src.dart';
 import 'package:flutter/services.dart';
 import '../../../../shares/shares_src.dart';
 

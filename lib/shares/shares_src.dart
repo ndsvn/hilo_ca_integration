@@ -3,5 +3,5 @@ export 'models/model_utils_src.dart';
 export 'utils/biometric/biometrics.dart';
 export 'utils/utils.src.dart';
 export 'widgets/widgets.src.dart';
-export 'package:ecert/assets.dart';
+export 'package:hilo_ca_integration/assets.dart';
 export 'upfile_repo/upload_file_repo.dart';

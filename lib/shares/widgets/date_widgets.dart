@@ -1,6 +1,6 @@
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
-import 'package:ecert/assets/assets.src.dart';
-import 'package:ecert/cores/theme/theme.src.dart';
+import 'package:hilo_ca_integration/assets/assets.src.dart';
+import 'package:hilo_ca_integration/cores/theme/theme.src.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

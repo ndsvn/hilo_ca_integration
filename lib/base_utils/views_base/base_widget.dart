@@ -1,7 +1,7 @@
-import 'package:ecert/assets/strings.dart';
-import 'package:ecert/base_utils/controllers_base/base_controller.src.dart';
-import 'package:ecert/cores/values/values.src.dart';
-import 'package:ecert/shares/widgets/utils_wigets.dart';
+import 'package:hilo_ca_integration/assets/strings.dart';
+import 'package:hilo_ca_integration/base_utils/controllers_base/base_controller.src.dart';
+import 'package:hilo_ca_integration/cores/values/values.src.dart';
+import 'package:hilo_ca_integration/shares/widgets/utils_wigets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';

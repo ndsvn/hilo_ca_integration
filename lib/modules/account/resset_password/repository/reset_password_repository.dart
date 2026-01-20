@@ -1,8 +1,8 @@
-import 'package:ecert/base_utils/model_base/base_response_be_new.dart';
-import 'package:ecert/base_utils/repository_base/base_repository.dart';
-import 'package:ecert/cores/enum/enum_request_method.dart';
-import 'package:ecert/cores/values/values.src.dart';
-import 'package:ecert/modules/account/resset_password/reset_password_src.dart';
+import 'package:hilo_ca_integration/base_utils/model_base/base_response_be_new.dart';
+import 'package:hilo_ca_integration/base_utils/repository_base/base_repository.dart';
+import 'package:hilo_ca_integration/cores/enum/enum_request_method.dart';
+import 'package:hilo_ca_integration/cores/values/values.src.dart';
+import 'package:hilo_ca_integration/modules/account/resset_password/reset_password_src.dart';
 
 class RepositoryResetPassword extends BaseRepository {
   RepositoryResetPassword(super.controller);

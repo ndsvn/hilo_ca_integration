@@ -1,9 +1,9 @@
-import 'package:ecert/base_utils/model_base/base_response_be_new.dart';
-import 'package:ecert/base_utils/repository_base/base_repository.dart';
-import 'package:ecert/cores/enum/enum_request_method.dart';
-import 'package:ecert/cores/values/values.src.dart';
-import 'package:ecert/modules/verify/live_ness/live_ness_kyc.src.dart';
-import 'package:ecert/modules/verify/update_photo_information_kyc/update_photo_information_kyc.src.dart';
+import 'package:hilo_ca_integration/base_utils/model_base/base_response_be_new.dart';
+import 'package:hilo_ca_integration/base_utils/repository_base/base_repository.dart';
+import 'package:hilo_ca_integration/cores/enum/enum_request_method.dart';
+import 'package:hilo_ca_integration/cores/values/values.src.dart';
+import 'package:hilo_ca_integration/modules/verify/live_ness/live_ness_kyc.src.dart';
+import 'package:hilo_ca_integration/modules/verify/update_photo_information_kyc/update_photo_information_kyc.src.dart';
 
 class UpdatePhotoInformationRepository extends BaseRepository {
   UpdatePhotoInformationRepository(super.controller);

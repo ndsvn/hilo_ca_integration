@@ -1,4 +1,4 @@
-import 'package:ecert/shares/shares_src.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
 import 'package:get/get.dart';
 
 // Tỉ lệ chiều cao so với màn hình thiết kế

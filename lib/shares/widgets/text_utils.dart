@@ -1,6 +1,6 @@
-import 'package:ecert/cores/theme/colors.dart';
-import 'package:ecert/cores/values/dimens.dart';
-import 'package:ecert/shares/shares_src.dart';
+import 'package:hilo_ca_integration/cores/theme/colors.dart';
+import 'package:hilo_ca_integration/cores/values/dimens.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:google_fonts/google_fonts.dart';

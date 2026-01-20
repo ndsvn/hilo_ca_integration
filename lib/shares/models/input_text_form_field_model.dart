@@ -1,4 +1,4 @@
-import 'package:ecert/cores/theme/theme.src.dart';
+import 'package:hilo_ca_integration/cores/theme/theme.src.dart';
 import 'package:flutter/material.dart';
 
 class InputTextModel {

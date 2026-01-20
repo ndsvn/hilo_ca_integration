@@ -1,6 +1,6 @@
-import 'package:ecert/base_utils/base_src.dart';
-import 'package:ecert/cores/cores_src.dart';
-import 'package:ecert/modules/modules_src.dart';
+import 'package:hilo_ca_integration/base_utils/base_src.dart';
+import 'package:hilo_ca_integration/cores/cores_src.dart';
+import 'package:hilo_ca_integration/modules/modules_src.dart';
 
 class FaceMatchingRepository extends BaseRepository {
   FaceMatchingRepository(super.controller);

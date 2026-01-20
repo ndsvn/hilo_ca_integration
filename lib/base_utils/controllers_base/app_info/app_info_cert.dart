@@ -1,5 +1,5 @@
-import 'package:ecert/modules/modules_src.dart';
-import 'package:ecert/shares/shares_src.dart';
+import 'package:hilo_ca_integration/modules/modules_src.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
 
 import '../app_controller/app_controller.dart';
 

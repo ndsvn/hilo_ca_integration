@@ -1,4 +1,4 @@
-import 'package:ecert/generated/locales.g.dart';
+import 'package:hilo_ca_integration/generated/locales.g.dart';
 import 'package:get/get_utils/src/extensions/export.dart';
 
 bool isPasswordValidate({

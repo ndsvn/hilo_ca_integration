@@ -1,5 +1,5 @@
-import 'package:ecert/base_utils/base_src.dart';
-import 'package:ecert/modules/list_cts/list_cts.src.dart';
+import 'package:hilo_ca_integration/base_utils/base_src.dart';
+import 'package:hilo_ca_integration/modules/list_cts/list_cts.src.dart';
 
 class GetListCts extends BaseGetxController {
   static GetListCts? _instance;

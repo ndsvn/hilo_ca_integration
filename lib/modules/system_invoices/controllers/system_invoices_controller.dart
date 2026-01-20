@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:ecert/routes/routes.dart';
-import 'package:ecert/shares/shares_src.dart';
+import 'package:hilo_ca_integration/routes/routes.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../base_utils/base_src.dart';

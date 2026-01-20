@@ -1,5 +1,5 @@
-import 'package:ecert/cores/enum/enum_request_method.dart';
-import 'package:ecert/cores/values/values.src.dart';
+import 'package:hilo_ca_integration/cores/enum/enum_request_method.dart';
+import 'package:hilo_ca_integration/cores/values/values.src.dart';
 
 import '../../../../base_utils/base_src.dart';
 import '../system_invoices.src.dart';

@@ -90,10 +90,11 @@ dependencies:
   package_info_plus: ^8.3.0
   path_provider: ^2.1.1
   percent_indicator: ^4.0.1
-  permission_handler:
-    git:
-      url: https://github.com/HVLoc/permission_flutter
-      ref: main
+  permission_handler: ^12.0.0+1
+  # permission_handler:
+  #   git:
+  #     url: https://github.com/HVLoc/permission_flutter
+  #     ref: main
   pin_code_fields: ^8.0.1
   pinput: ^5.0.1
   pull_to_refresh: ^2.0.0

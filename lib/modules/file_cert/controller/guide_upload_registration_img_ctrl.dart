@@ -1,8 +1,8 @@
 import 'dart:typed_data';
 
-import 'package:ecert/cores/cores_src.dart';
-import 'package:ecert/modules/modules_src.dart';
-import 'package:ecert/shares/shares_src.dart';
+import 'package:hilo_ca_integration/cores/cores_src.dart';
+import 'package:hilo_ca_integration/modules/modules_src.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
 import 'package:image_stitcher/image_stitcher.dart';
 
 class GuideUploadRegistrationImgCtrl extends FileOcrCtrl {

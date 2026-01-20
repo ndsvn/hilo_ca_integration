@@ -1,6 +1,6 @@
-import 'package:ecert/modules/home/views/bottom_navigation.dart';
-import 'package:ecert/modules/list_cts/list_cts.src.dart';
-import 'package:ecert/modules/profile/profile.src.dart';
+import 'package:hilo_ca_integration/modules/home/views/bottom_navigation.dart';
+import 'package:hilo_ca_integration/modules/list_cts/list_cts.src.dart';
+import 'package:hilo_ca_integration/modules/profile/profile.src.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

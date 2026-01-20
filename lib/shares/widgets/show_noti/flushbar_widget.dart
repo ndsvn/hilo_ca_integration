@@ -1,5 +1,5 @@
 import 'package:another_flushbar/flushbar.dart';
-import 'package:ecert/cores/cores_src.dart';
+import 'package:hilo_ca_integration/cores/cores_src.dart';
 import 'package:flutter/material.dart';
 
 import '../../shares_src.dart';

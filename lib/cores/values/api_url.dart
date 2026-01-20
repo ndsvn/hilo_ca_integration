@@ -1,4 +1,4 @@
-import 'package:ecert/cores/values/base_url.dart';
+import 'package:hilo_ca_integration/cores/values/base_url.dart';
 
 class AppUrl {
   static const String version = "?v=1.0";

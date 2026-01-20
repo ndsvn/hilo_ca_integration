@@ -1,13 +1,13 @@
 import 'package:dio_log_sds/dio_log_sds.dart';
-import 'package:ecert/modules/account/resset_password/reset_password_src.dart';
-import 'package:ecert/modules/detail_cts/detail_cts.src.dart';
-import 'package:ecert/modules/list_cts/list_cts.src.dart';
-import 'package:ecert/modules/modules_src.dart';
-import 'package:ecert/modules/splash/views/splash_page.dart';
-import 'package:ecert/modules/verify/live_ness/live_ness_kyc.src.dart';
-import 'package:ecert/modules/verify/take_picture_card_kyc/take_picture_card_kyc.src.dart';
-import 'package:ecert/modules/verify/update_photo_information_kyc/update_photo_information_kyc.src.dart';
-import 'package:ecert/routes/routes.dart';
+import 'package:hilo_ca_integration/modules/account/resset_password/reset_password_src.dart';
+import 'package:hilo_ca_integration/modules/detail_cts/detail_cts.src.dart';
+import 'package:hilo_ca_integration/modules/list_cts/list_cts.src.dart';
+import 'package:hilo_ca_integration/modules/modules_src.dart';
+import 'package:hilo_ca_integration/modules/splash/views/splash_page.dart';
+import 'package:hilo_ca_integration/modules/verify/live_ness/live_ness_kyc.src.dart';
+import 'package:hilo_ca_integration/modules/verify/take_picture_card_kyc/take_picture_card_kyc.src.dart';
+import 'package:hilo_ca_integration/modules/verify/update_photo_information_kyc/update_photo_information_kyc.src.dart';
+import 'package:hilo_ca_integration/routes/routes.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 

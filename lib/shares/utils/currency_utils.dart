@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:ecert/cores/cores_src.dart';
+import 'package:hilo_ca_integration/cores/cores_src.dart';
 import 'package:intl/intl.dart';
 
 class CurrencyUtils {

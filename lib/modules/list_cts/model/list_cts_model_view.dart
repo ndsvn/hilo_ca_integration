@@ -1,4 +1,4 @@
-import 'package:ecert/shares/shares_src.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
 
 import 'list_cts_model.dart';
 

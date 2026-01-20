@@ -1,6 +1,6 @@
 import 'package:dio_log_sds/dio_log_sds.dart';
-import 'package:ecert/routes/routes.dart';
-import 'package:ecert/shares/shares_src.dart';
+import 'package:hilo_ca_integration/routes/routes.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 

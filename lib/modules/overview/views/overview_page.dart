@@ -1,7 +1,7 @@
-import 'package:ecert/base_utils/base_src.dart';
-import 'package:ecert/cores/theme/colors.dart';
-import 'package:ecert/generated/locales.g.dart';
-import 'package:ecert/shares/shares_src.dart';
+import 'package:hilo_ca_integration/base_utils/base_src.dart';
+import 'package:hilo_ca_integration/cores/theme/colors.dart';
+import 'package:hilo_ca_integration/generated/locales.g.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
 import 'package:flutter/material.dart';
 
 import '../../../cores/values/values.src.dart';

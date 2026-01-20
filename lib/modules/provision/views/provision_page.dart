@@ -1,6 +1,6 @@
-import 'package:ecert/base_utils/base_src.dart';
-import 'package:ecert/generated/locales.g.dart';
-import 'package:ecert/routes/routes.dart';
+import 'package:hilo_ca_integration/base_utils/base_src.dart';
+import 'package:hilo_ca_integration/generated/locales.g.dart';
+import 'package:hilo_ca_integration/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 

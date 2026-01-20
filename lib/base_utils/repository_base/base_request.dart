@@ -3,11 +3,11 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:dio_log_sds/interceptor/dio_log_interceptor.dart';
-import 'package:ecert/base_utils/base_src.dart';
-import 'package:ecert/cores/enum/enum_request_method.dart';
-import 'package:ecert/cores/values/base_url.dart';
-import 'package:ecert/cores/values/values.src.dart';
-import 'package:ecert/shares/utils/log/dio_log.dart';
+import 'package:hilo_ca_integration/base_utils/base_src.dart';
+import 'package:hilo_ca_integration/cores/enum/enum_request_method.dart';
+import 'package:hilo_ca_integration/cores/values/base_url.dart';
+import 'package:hilo_ca_integration/cores/values/values.src.dart';
+import 'package:hilo_ca_integration/shares/utils/log/dio_log.dart';
 
 class BaseRequest {
   static Dio dio = getBaseDio();

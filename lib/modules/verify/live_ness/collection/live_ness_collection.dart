@@ -1,5 +1,5 @@
-import 'package:ecert/generated/locales.g.dart';
-import 'package:ecert/shares/shares_src.dart';
+import 'package:hilo_ca_integration/generated/locales.g.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
 
 class LiveNessCollection {
   static List<String> questions = [

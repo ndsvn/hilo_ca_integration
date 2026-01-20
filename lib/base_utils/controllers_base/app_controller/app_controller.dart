@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:camera/camera.dart';
-import 'package:ecert/base_utils/base_src.dart';
-import 'package:ecert/cores/values/values.src.dart';
-import 'package:ecert/generated/locales.g.dart';
-import 'package:ecert/routes/routes.dart';
-import 'package:ecert/shares/shares_src.dart';
+import 'package:hilo_ca_integration/base_utils/base_src.dart';
+import 'package:hilo_ca_integration/cores/values/values.src.dart';
+import 'package:hilo_ca_integration/generated/locales.g.dart';
+import 'package:hilo_ca_integration/routes/routes.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;

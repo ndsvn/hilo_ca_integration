@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:ecert/assets/assets.src.dart';
-import 'package:ecert/cores/cores_src.dart';
-import 'package:ecert/modules/modules_src.dart';
-import 'package:ecert/routes/routes.dart';
-import 'package:ecert/shares/shares_src.dart';
-import 'package:ecert/shares/utils/log/dio_log.dart';
+import 'package:hilo_ca_integration/assets/assets.src.dart';
+import 'package:hilo_ca_integration/cores/cores_src.dart';
+import 'package:hilo_ca_integration/modules/modules_src.dart';
+import 'package:hilo_ca_integration/routes/routes.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
+import 'package:hilo_ca_integration/shares/utils/log/dio_log.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';

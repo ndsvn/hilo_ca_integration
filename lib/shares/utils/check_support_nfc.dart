@@ -1,4 +1,4 @@
-import 'package:ecert/cores/cores_src.dart';
+import 'package:hilo_ca_integration/cores/cores_src.dart';
 import 'package:flutter_nfc_kit/flutter_nfc_kit.dart';
 
 class CheckSupportNfc {

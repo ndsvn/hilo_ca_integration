@@ -1,8 +1,8 @@
 import 'package:bot_toast/bot_toast.dart';
-import 'package:ecert/assets/assets.src.dart';
-import 'package:ecert/base_utils/repository_base/base_request.dart';
-import 'package:ecert/cores/theme/theme.src.dart';
-import 'package:ecert/shares/shares_src.dart';
+import 'package:hilo_ca_integration/assets/assets.src.dart';
+import 'package:hilo_ca_integration/base_utils/repository_base/base_request.dart';
+import 'package:hilo_ca_integration/cores/theme/theme.src.dart';
+import 'package:hilo_ca_integration/shares/shares_src.dart';
 import 'package:flutter/material.dart';
 
 import '../../../cores/values/values.src.dart';

@@ -1,4 +1,4 @@
-import 'package:ecert/modules/nfc_kyc/nfc/model/nfc_model.dart';
+import 'package:hilo_ca_integration/modules/nfc_kyc/nfc/model/nfc_model.dart';
 
 class NfcModelApp {
   NfcModelApp({

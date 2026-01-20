@@ -1,6 +1,6 @@
-import 'package:ecert/base_utils/base_src.dart';
-import 'package:ecert/modules/modules_src.dart';
-import 'package:ecert/modules/nfc_kyc/nfc/model/nfc_model.dart';
+import 'package:hilo_ca_integration/base_utils/base_src.dart';
+import 'package:hilo_ca_integration/modules/modules_src.dart';
+import 'package:hilo_ca_integration/modules/nfc_kyc/nfc/model/nfc_model.dart';
 
 import '../../../shares/shares_src.dart';
 

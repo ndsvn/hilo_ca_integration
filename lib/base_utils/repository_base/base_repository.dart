@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:ecert/cores/cores_src.dart';
+import 'package:hilo_ca_integration/cores/cores_src.dart';
 import 'package:get/get.dart';
-import 'package:ecert/base_utils/controllers_base/base_controller.src.dart';
-import 'package:ecert/base_utils/repository_base/base_request.dart';
+import 'package:hilo_ca_integration/base_utils/controllers_base/base_controller.src.dart';
+import 'package:hilo_ca_integration/base_utils/repository_base/base_request.dart';
 
 class BaseRepository {
   final BaseRequest _baseRequest = Get.find<BaseRequest>();
