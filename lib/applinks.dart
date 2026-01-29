@@ -15,22 +15,22 @@ class AppLinkContract {
       200.milliseconds.delay(() {
         if (uri.queryParameters["taskId"] != null) {
           // Nếu đã mở ứng dụng thì đóng các trang hiện tại và vào luôn màn chi tiết hồ sơ
-          if (Get.isRegistered<AppController>()) {
-            Get.offAllNamed(
-              AppRoutes.routeLogin,
-              parameters: uri.queryParameters,
-            );
-          } else {
-            // Nếu chưa mở ứng dụng thì init dữ liệu và vào màn chi tiết hồ sơ
-            Get.offAllNamed(
-              AppRoutes.routeSplash,
-              parameters: uri.queryParameters,
-            );
-          }
+          // if (Get.isRegistered<AppController>()) {
+          //   Get.offAllNamed(
+          //     AppRoutes.routeLogin,
+          //     parameters: uri.queryParameters,
+          //   );
+          // } else {
+          //   // Nếu chưa mở ứng dụng thì init dữ liệu và vào màn chi tiết hồ sơ
+          //   Get.offAllNamed(
+          //     AppRoutes.routeSplash,
+          //     parameters: uri.queryParameters,
+          //   );
+          // }
 
           // Get.toNamed(uri.path);
         } else {
-          Get.offAllNamed(AppRoutes.routeLogin);
+          // Get.offAllNamed(AppRoutes.routeLogin);
         }
       });
     });

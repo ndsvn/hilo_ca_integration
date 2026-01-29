@@ -23,9 +23,9 @@ Widget _buildBody(OverviewCtrl controller) {
         _buildCTSRegister(controller),
         UtilWidget.sizedBox10,
         _buildCTSRegisterPersonal(controller),
-        SizedBox(
-          height: 70.h,
-        ),
+        UtilWidget.sizedBox10,
+        _buildLogout(controller),
+        UtilWidget.sizedBox10,
         Center(
           child: GestureDetector(
             onTap: () {
@@ -124,6 +124,47 @@ Widget _buildCTSRegisterPersonal(OverviewCtrl controller) {
                   colorFilter:
                       const ColorFilter.mode(AppColors.white, BlendMode.srcIn),
                 ),
+              ),
+            ],
+          ),
+        )
+      ],
+    ),
+  );
+}
+
+Widget _buildLogout(OverviewCtrl controller) {
+  return _itemCard(
+    colorCard: AppColors.lightPrimaryColor,
+    onTap: () {
+      Get.back();
+    },
+    child: Row(
+      children: [
+        CircleAvatar(
+          backgroundColor: AppColors.white,
+          child: Icon(Icons.logout),
+        ),
+        UtilWidget.sizedBoxWidth10,
+        Expanded(
+          child: Row(
+            children: [
+              Expanded(
+                child: TextUtils(
+                  text: "Đăng xuất",
+                  availableStyle: StyleEnum.titleSmall,
+                  color: AppColors.white,
+                  maxLine: 2,
+                ),
+              ),
+              UtilWidget.sizedBoxWidth15,
+              Container(
+                alignment: Alignment.topRight,
+                // child: SvgPicture.asset(
+                //   Assets.ASSETS_IMAGES_ICON_ICON_SVG_IC_MORE_SVG,
+                //   colorFilter:
+                //       const ColorFilter.mode(AppColors.white, BlendMode.srcIn),
+                // ),
               ),
             ],
           ),

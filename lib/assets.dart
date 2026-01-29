@@ -6,9 +6,9 @@
 
 class Assets {
   const Assets._();
-  static const String package = 'ecert';
+  static const String package = 'hilo_ca_integration';
 
-  static bool isFromModules = false;
+  static bool isFromModules = true;
 
   /// {@macro assets_generator.ASSETS_ECERT_BG_DETAIL_CTS_SVG.preview}
   static String get ASSETS_ECERT_BG_DETAIL_CTS_SVG =>

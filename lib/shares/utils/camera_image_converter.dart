@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:camera/camera.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
+import 'package:google_mlkit_commons/google_mlkit_commons.dart' as ml;
 import 'package:image/image.dart' as img;
 
 class CameraImageConverter {
@@ -138,64 +139,196 @@ class CameraImageConverter {
   //   );
   // }
 
-  static InputImage? inputImageFromCameraImage(CameraImage image,
-       CameraDescription camera, CameraController cameraController) {
+  // static InputImage? inputImageFromCameraImage(CameraImage image,
+  //      CameraDescription camera, CameraController cameraController) {
 
-    final orientations = {
+  //   final orientations = {
+  //     DeviceOrientation.portraitUp: 0,
+  //     DeviceOrientation.landscapeLeft: 90,
+  //     DeviceOrientation.portraitDown: 180,
+  //     DeviceOrientation.landscapeRight: 270,
+  //   };
+  //   // get image rotation
+  //   // it is used in android to convert the InputImage from Dart to Java
+  //   // `rotation` is not used in iOS to convert the InputImage from Dart to Obj-C
+  //   // in both platforms `rotation` and `camera.lensDirection` can be used to compensate `x` and `y` coordinates on a canvas
+  //   // final camera = cameraDe[_cameraIndex];
+  //   final sensorOrientation = camera.sensorOrientation;
+  //   InputImageRotation? rotation;
+  //   if (Platform.isIOS) {
+  //     rotation = InputImageRotationValue.fromRawValue(sensorOrientation);
+  //   } else if (Platform.isAndroid) {
+  //     var rotationCompensation =
+  //     orientations[cameraController.value.deviceOrientation];
+  //     print("rotationCompensation: ${rotationCompensation}");
+  //     if (rotationCompensation == null) return null;
+  //     print("camera.lensDirection: ${camera.lensDirection}");
+  //     if (camera.lensDirection == CameraLensDirection.front) {
+
+  //       // front-facing
+  //       rotationCompensation = (sensorOrientation + rotationCompensation) % 360;
+  //     } else {
+  //       // back-facing
+  //       rotationCompensation =
+  //           (sensorOrientation - rotationCompensation + 360) % 360;
+  //     }
+  //     print("rotationCompensation: ${rotationCompensation}");
+  //     rotation = InputImageRotationValue.fromRawValue(rotationCompensation);
+  //   }
+  //   print("rotation: ${rotation}");
+  //   if (rotation == null) return null;
+
+  //   print("format");
+  //   // get image format
+  //   final format = InputImageFormatValue.fromRawValue(image.format.raw);
+  //   print("format: ${format.toString()}");
+  //   // validate format depending on platform
+  //   // only supported formats:
+  //   // * nv21 for Android
+  //   // * bgra8888 for iOS
+  //   if (format == null ||
+  //       (Platform.isAndroid && format != InputImageFormat.nv21) ||
+  //       (Platform.isIOS && format != InputImageFormat.bgra8888)) return null;
+  //   print("image.planes.length: ${image.planes.length}");
+  //   // since format is constraint to nv21 or bgra8888, both only have one plane
+  //   if (image.planes.length != 1) return null;
+  //   final plane = image.planes.first;
+
+  //   // compose InputImage using bytes
+  //   print("plane.bytes.length: ${plane.bytes.length}");
+  //   return InputImage.fromBytes(
+  //     bytes: plane.bytes,
+  //     metadata: InputImageMetadata(
+  //       size: Size(image.width.toDouble(), image.height.toDouble()),
+  //       rotation: rotation, // used only in Android
+  //       format: format, // used only in iOS
+  //       bytesPerRow: plane.bytesPerRow, // used only in iOS
+  //     ),
+  //   );
+  // }
+  static ml.InputImage? inputImageFromCameraImage(
+    CameraImage image,
+    CameraDescription camera,
+    CameraController cameraController,
+  ) {
+    final orientations = <DeviceOrientation, int>{
       DeviceOrientation.portraitUp: 0,
       DeviceOrientation.landscapeLeft: 90,
       DeviceOrientation.portraitDown: 180,
       DeviceOrientation.landscapeRight: 270,
     };
-    // get image rotation
-    // it is used in android to convert the InputImage from Dart to Java
-    // `rotation` is not used in iOS to convert the InputImage from Dart to Obj-C
-    // in both platforms `rotation` and `camera.lensDirection` can be used to compensate `x` and `y` coordinates on a canvas
-    // final camera = cameraDe[_cameraIndex];
+
     final sensorOrientation = camera.sensorOrientation;
-    InputImageRotation? rotation;
+    ml.InputImageRotation? rotation;
+
     if (Platform.isIOS) {
-      rotation = InputImageRotationValue.fromRawValue(sensorOrientation);
+      rotation = ml.InputImageRotationValue.fromRawValue(sensorOrientation);
     } else if (Platform.isAndroid) {
       var rotationCompensation =
-      orientations[cameraController.value.deviceOrientation];
+          orientations[cameraController.value.deviceOrientation];
       if (rotationCompensation == null) return null;
+
       if (camera.lensDirection == CameraLensDirection.front) {
-        // front-facing
         rotationCompensation = (sensorOrientation + rotationCompensation) % 360;
       } else {
-        // back-facing
         rotationCompensation =
             (sensorOrientation - rotationCompensation + 360) % 360;
       }
-      rotation = InputImageRotationValue.fromRawValue(rotationCompensation);
+      rotation = ml.InputImageRotationValue.fromRawValue(rotationCompensation);
     }
+
     if (rotation == null) return null;
 
-    // get image format
-    final format = InputImageFormatValue.fromRawValue(image.format.raw);
-    // validate format depending on platform
-    // only supported formats:
-    // * nv21 for Android
-    // * bgra8888 for iOS
-    if (format == null ||
-        (Platform.isAndroid && format != InputImageFormat.nv21) ||
-        (Platform.isIOS && format != InputImageFormat.bgra8888)) return null;
+    // iOS
+    if (Platform.isIOS) {
+      final format = ml.InputImageFormatValue.fromRawValue(image.format.raw);
+      if (format != ml.InputImageFormat.bgra8888) return null;
+      if (image.planes.length != 1) return null;
 
-    // since format is constraint to nv21 or bgra8888, both only have one plane
-    if (image.planes.length != 1) return null;
-    final plane = image.planes.first;
+      final plane = image.planes.first;
+      return ml.InputImage.fromBytes(
+        bytes: plane.bytes,
+        metadata: ml.InputImageMetadata(
+          size: Size(image.width.toDouble(), image.height.toDouble()),
+          rotation: rotation,
+          format: ml.InputImageFormat.bgra8888,
+          bytesPerRow: plane.bytesPerRow,
+        ),
+      );
+    }
 
-    // compose InputImage using bytes
-    return InputImage.fromBytes(
-      bytes: plane.bytes,
-      metadata: InputImageMetadata(
+    // Android
+    final rawFormat = ml.InputImageFormatValue.fromRawValue(image.format.raw);
+
+    // Case A: NV21 sẵn (1 plane)
+    if (rawFormat == ml.InputImageFormat.nv21 && image.planes.length == 1) {
+      final plane = image.planes.first;
+      return ml.InputImage.fromBytes(
+        bytes: plane.bytes,
+        metadata: ml.InputImageMetadata(
+          size: Size(image.width.toDouble(), image.height.toDouble()),
+          rotation: rotation,
+          format: ml.InputImageFormat.nv21,
+          bytesPerRow: image.width,
+        ),
+      );
+    }
+
+    // Case B: convert YUV_420_888 (3 planes) -> NV21
+    if (image.planes.length < 3) return null;
+    final nv21Bytes = _yuv420ToNv21(image);
+
+    return ml.InputImage.fromBytes(
+      bytes: nv21Bytes,
+      metadata: ml.InputImageMetadata(
         size: Size(image.width.toDouble(), image.height.toDouble()),
-        rotation: rotation, // used only in Android
-        format: format, // used only in iOS
-        bytesPerRow: plane.bytesPerRow, // used only in iOS
+        rotation: rotation,
+        format: ml.InputImageFormat.nv21,
+        bytesPerRow: image.width,
       ),
     );
+  }
+
+  static Uint8List _yuv420ToNv21(CameraImage image) {
+    final int width = image.width;
+    final int height = image.height;
+
+    final Plane yPlane = image.planes[0];
+    final Plane uPlane = image.planes[1];
+    final Plane vPlane = image.planes[2];
+
+    final Uint8List yBytes = yPlane.bytes;
+    final Uint8List uBytes = uPlane.bytes;
+    final Uint8List vBytes = vPlane.bytes;
+
+    final int yRowStride = yPlane.bytesPerRow;
+    final int uvRowStride = uPlane.bytesPerRow;
+    final int uvPixelStride = uPlane.bytesPerPixel ?? 1;
+
+    final Uint8List out = Uint8List(width * height + (width * height ~/ 2));
+
+    // Copy Y
+    int outIndex = 0;
+    for (int row = 0; row < height; row++) {
+      final int yRowStart = row * yRowStride;
+      out.setRange(outIndex, outIndex + width, yBytes, yRowStart);
+      outIndex += width;
+    }
+
+    // Interleave VU (NV21)
+    final int uvHeight = height ~/ 2;
+    final int uvWidth = width ~/ 2;
+    int uvOutIndex = width * height;
+
+    for (int row = 0; row < uvHeight; row++) {
+      final int uvRowStart = row * uvRowStride;
+      for (int col = 0; col < uvWidth; col++) {
+        final int uvIndex = uvRowStart + col * uvPixelStride;
+        out[uvOutIndex++] = vBytes[uvIndex]; // V
+        out[uvOutIndex++] = uBytes[uvIndex]; // U
+      }
+    }
+    return out;
   }
 
   ///Convert from InputImage format to Image with ARGB format
@@ -207,7 +340,7 @@ class CameraImageConverter {
     //int total = width * height;
     //Uint8List rgb = Uint8List(total);
     final outImg =
-    img.Image(width: width, height: height); // default numChannels is 3
+        img.Image(width: width, height: height); // default numChannels is 3
 
     final int frameSize = width * height;
 
@@ -260,11 +393,11 @@ class CameraImageConverter {
     img.Image convertedImage = Platform.isAndroid
         ? decodeYUV420SP(item)
         : img.Image.fromBytes(
-      width: item.metadata!.size.width.toInt(),
-      height: item.metadata!.size.height.toInt(),
-      bytes: item.bytes!.buffer, // For iOS
-      order: img.ChannelOrder.bgra,
-    );
+            width: item.metadata!.size.width.toInt(),
+            height: item.metadata!.size.height.toInt(),
+            bytes: item.bytes!.buffer, // For iOS
+            order: img.ChannelOrder.bgra,
+          );
 
     // Xử lý hướng xoay ảnh và giảm size
     if (item.metadata!.size.width.toInt() >

@@ -1,7 +1,7 @@
 class AppRoutes {
-  static const String routeSplash = '/';
-  static const String routeLogin = '/login';
-  static const String routeHome = '/home';
+  static const String routeSplash = '/splash-hilo';
+  static const String routeLogin = '/login-hilo';
+  static const String routeHome = '/home-hilo';
   static const String routePersonalInfor = '/personalInfo';
   static const String routePersonalSignature = '/personalSignature';
   static const String routeViewPdf = '/viewPdf';

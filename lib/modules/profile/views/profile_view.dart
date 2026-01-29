@@ -8,7 +8,7 @@ Widget _body(ProfileController controller) {
       UtilWidget.sizedBox25,
       _buildAccount(),
       _buildAction(controller),
-      _buildLogout(controller),
+      // _buildLogout(controller),
     ],
   ).paddingAll(AppDimens.defaultPadding);
 }

@@ -25,6 +25,9 @@ class AppController extends GetxController {
   bool isFaceID = false;
   late CameraController cameraController;
   late List<CameraDescription> cameras;
+  final Completer<void> _ready = Completer<void>();
+  Future<void> get ready => _ready.future;
+  bool get isReady => _ready.isCompleted;
   // int taskId = 0;
   // String typeSignPdf = "";
   // String imgFaceFront = "";
@@ -37,57 +40,24 @@ class AppController extends GetxController {
 
   @override
   void onInit() {
-    initHive().then((value) async {
+    super.onInit();
+    _bootstrap();
+  }
+
+  Future<void> _bootstrap() async {
+    try {
+      await initHive();
       Get.put(BaseRequest(), permanent: true);
       Get.put(BaseGetxController(), permanent: true);
-      // initCamera();
-      // await initConfig();
-      try {
-        var biometrics = await Biometrics().getAvailableBiometrics();
-        isFingerprintOrFaceID.value =
-            hiveApp.get(AppConst.loginBiometric) ?? false;
 
-        if (biometrics != null) {
-          isFaceID = biometrics.contains(BiometricType.face);
-        }
-
-        // Config demo SDK
-        Get.toNamed(AppRoutes.routeGuideCert);
-
-
-        /// Config đăng nhập như app bình thường
-        // if (AppConfig.instance.getSystemInvoices() != null) {
-        //   Get.offAndToNamed(AppRoutes.routeLogin);
-        // } else {
-        //   Get.offAndToNamed(AppRoutes.routeSystemInvoices);
-        // }
-
-        // if (Get.parameters["taskId"] == null) {
-        //   // kiểm tra trạng thái lưu đăng nhập
-        //   if (hiveApp.get(AppConst.keyToken) != null) {
-        //     LoginController loginController = Get.put(LoginController());
-        //     await loginController.loginUserFromLogin(
-        //         LoginModelRequest(
-        //           // taxCode: hiveApp.get(AppConst.textTaxCode),
-        //           username: hiveApp.get(AppConst.userName),
-        //           password: hiveApp.get(AppConst.password),
-        //         ),
-        //         isLoginFromApp: true);
-        //   } else {
-        //     Get.offAndToNamed(AppRoutes.routeLogin);
-        //   }
-        // } else {
-        //   Get.offNamed(
-        //     AppRoutes.routeLogin,
-        //     parameters: Map.from(Get.parameters),
-        //   );
-        // }
-      } catch (e) {
-        Get.offAndToNamed(AppRoutes.routeLogin);
-      }
-    });
-    super.onInit();
+      if (!_ready.isCompleted) _ready.complete();
+    } catch (e, st) {
+      if (!_ready.isCompleted) _ready.completeError(e, st);
+      rethrow;
+    }
   }
+
+  
 
   Future<void> initCamera() async {
     cameras = await availableCameras();
@@ -126,5 +96,3 @@ Future<void> initHive() async {
   }
   print(androidDeviceInfo?.version.sdkInt);
 }
-
-

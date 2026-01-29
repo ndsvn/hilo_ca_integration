@@ -116,7 +116,7 @@ class LoginController extends BaseGetxController {
       await loginResponse(isLoginFromApp, response);
     } catch (e) {
       if (isLoginFromApp) {
-        Get.offAllNamed(AppRoutes.routeLogin);
+        Get.offAndToNamed(AppRoutes.routeLogin);
       } else {
         if (!(Get.isDialogOpen ?? false)) {
           showFlushNoti(
@@ -136,7 +136,7 @@ class LoginController extends BaseGetxController {
 
       if (response.status) {
         AppInfoCert.instance.cusInfo = response.data!;
-        Get.offAllNamed(
+        Get.offAndToNamed(
           AppRoutes.routeHome,
         );
       } else {
@@ -147,7 +147,7 @@ class LoginController extends BaseGetxController {
       }
     } catch (e) {
       if (isLoginFromApp) {
-        Get.offAllNamed(AppRoutes.routeLogin);
+        Get.offAndToNamed(AppRoutes.routeLogin);
       } else {
         if (!(Get.isDialogOpen ?? false)) {
           showFlushNoti(
@@ -196,7 +196,7 @@ class LoginController extends BaseGetxController {
       await loginSuccess(response.data!, isLoginFromApp: isLoginFromApp);
     } else {
       if (isLoginFromApp) {
-        Get.offAllNamed(AppRoutes.routeLogin);
+        Get.offAndToNamed(AppRoutes.routeLogin);
       } else {
         showFlushNoti(
           LocaleKeys.login_wrongInfoLogin.tr,

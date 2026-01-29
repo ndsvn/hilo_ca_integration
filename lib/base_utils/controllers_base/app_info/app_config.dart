@@ -36,6 +36,5 @@ class AppConfig {
 
   void clearData() {
     nfcModelApp = NfcModelApp();
-    keyAccessDataNFCIos = null;
   }
 }
