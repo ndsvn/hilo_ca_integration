@@ -136,8 +136,9 @@ Widget _buildCTSRegisterPersonal(OverviewCtrl controller) {
 Widget _buildLogout(OverviewCtrl controller) {
   return _itemCard(
     colorCard: AppColors.lightPrimaryColor,
-    onTap: () {
+    onTap: () async {
       Get.back();
+      AppInfoCert.instance.onLogout?.call();
     },
     child: Row(
       children: [

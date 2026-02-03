@@ -32,6 +32,13 @@ class AppInfoCert {
   /// Biến xác định đăng ký cá nhân hay tổ chức
   bool isPersonal = false;
 
+  /// Biến chứa hàm logout
+  Function()? onLogout;
+
+  void setOnLogout(Function() onLogout) {
+    AppInfoCert.instance.onLogout = onLogout;
+  }
+
   void setSdkRequestModel(SdkRequestModel sdkRequestModel) {
     AppInfoCert.instance.sdkRequestModel = sdkRequestModel;
   }

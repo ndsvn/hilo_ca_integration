@@ -2,6 +2,7 @@ import 'package:hilo_ca_integration/base_utils/controllers_base/base_controller.
 import 'package:hilo_ca_integration/cores/cores_src.dart';
 import 'package:hilo_ca_integration/shares/shares_src.dart';
 import 'package:flutter/material.dart';
+import 'package:hilo_ca_integration/modules/system_invoices/models/system_invoices_response.dart';
 import 'package:hilo_ca_integration/routes/routes.dart';
 import 'package:get/get.dart';
 import 'package:hilo_ca_integration/base_utils/controllers_base/app_controller/app_controller.dart';
@@ -31,8 +32,14 @@ class _SplashPageState extends State<SplashPage> {
       if (!mounted) return;
 
       // Tránh chuyển lại nếu đang ở đúng route (tuỳ bạn)
-      if (Get.currentRoute != AppRoutes.routeSystemInvoices) {
-        Get.offAndToNamed(AppRoutes.routeSystemInvoices);
+      if (Get.currentRoute != AppRoutes.routeLogin) {
+        AppConfig.instance.setSystemInvoices(new SystemInvoicesResponse(
+          id: "b1747115-c812-40cd-8d39-7413116f7e3b",
+          code: "HILO.CRM",
+          name: "[HILO.CRM] Hệ thống CRM",
+          host: "https://crmapi.hilo.com.vn",
+        ));
+        Get.offAndToNamed(AppRoutes.routeLogin);
       }
     });
   }
