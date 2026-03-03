@@ -54,7 +54,12 @@ class ConfirmCTSPageController extends BaseGetxController {
         .confirmCts(signCtsResponse.certAlias)
         .then((value) async {
       if (value.status) {
-        Get.until((route) => Get.routing.current == AppRoutes.routeHome);
+        try {
+          Get.until((route) => Get.routing.current == AppRoutes.routeHome);
+          Get.back();
+          AppInfoCert.instance.onLogout?.call();
+        } catch (e) {}
+
         showFlushNoti(
           LocaleKeys.eCert_register_registerSuccessCTSTitle.tr,
           content: LocaleKeys.eCert_register_registerSuccessCTSContent.tr,

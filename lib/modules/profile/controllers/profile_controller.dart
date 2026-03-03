@@ -22,7 +22,8 @@ class ProfileController extends BaseGetxController {
       title: LocaleKeys.eCert_profile_logoutTitle.tr,
       // cancelFunc: () => ShowDialog.dismissDialog(),
       confirm: () {
-        Get.offAllNamed(AppRoutes.routeLogin);
+        // Get.offAllNamed(AppRoutes.routeLogin);
+         Get.back();
       },
       actionTitle: LocaleKeys.eCert_profile_confirm.tr,
       colorConfirm: AppColors.colorRed,
