@@ -515,109 +515,118 @@ class UtilWidget {
     Function(dynamic)? onChanged,
   }) {
     return Obx(
-      () => DropdownButtonHideUnderline(
-        child: DropdownButtonFormField2<dynamic>(
-          selectedItemBuilder: (BuildContext context) {
-            return mapData.values.map<Widget>((val) {
-              return Container(
-                alignment: Alignment.centerLeft,
-                child: Row(
-                  children: [
-                    svgImage != null
-                        ? SvgPicture.asset(
-                            svgImage,
-                          ).paddingOnly(right: AppDimens.paddingSize5)
-                        : const SizedBox(),
-                    UtilWidget.sizedBoxWidth7,
-                    Expanded(
-                      child: TextUtils(
-                        text: val,
-                        availableStyle: StyleEnum.bodySmall,
-                        maxLine: 2,
-                        color: colorText,
+      () {
+        final valueNotifier = ValueNotifier<dynamic>(item.value);
+        return DropdownButtonHideUnderline(
+          child: DropdownButtonFormField2<dynamic>(
+            selectedItemBuilder: (BuildContext context) {
+              return mapData.values.map<Widget>((val) {
+                return Container(
+                  alignment: Alignment.centerLeft,
+                  child: Row(
+                    children: [
+                      svgImage != null
+                          ? SvgPicture.asset(
+                              svgImage,
+                            ).paddingOnly(right: AppDimens.paddingSize5)
+                          : const SizedBox(),
+                      UtilWidget.sizedBoxWidth7,
+                      Expanded(
+                        child: TextUtils(
+                          text: val,
+                          availableStyle: StyleEnum.bodySmall,
+                          maxLine: 2,
+                          color: colorText,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              );
-            }).toList();
-          },
-          hint: TextUtils(
-            text: LocaleKeys.personalInfo_hintDropdown.tr,
-            availableStyle: StyleEnum.bodySmall,
-            color: AppColors.colorBasicGrey,
-          ),
-          dropdownStyleData: DropdownStyleData(
-            decoration: BoxDecoration(
-                color: AppColors.colorWhite,
-                borderRadius: BorderRadius.circular(
-                  AppDimens.paddingMedium,
-                )),
-            maxHeight: Get.height / 2.5,
-            offset: const Offset(-0, -5),
-            scrollbarTheme: ScrollbarThemeData(
-              // radius: const Radius.circular(40),
-              thickness: WidgetStateProperty.all<double>(6),
-              thumbVisibility: WidgetStateProperty.all<bool>(true),
-            ),
-          ),
-          isExpanded: true,
-          decoration: InputDecoration(
-            filled: true,
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(AppDimens.paddingMedium),
-              borderSide: BorderSide(
-                color: fillColor,
-              ),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(AppDimens.paddingMedium),
-              borderSide: BorderSide(
-                color: fillColor,
-              ),
-            ),
-            contentPadding: const EdgeInsets.all(0),
-            fillColor: AppColors.colorWhite,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(AppDimens.paddingMedium),
-            ),
-          ),
-          items: mapData
-              .map((key, value) {
-                return MapEntry(
-                  key,
-                  DropdownMenuItem<dynamic>(
-                    value: key,
-                    child: TextUtils(
-                      text: mapData[key] ?? "",
-                      availableStyle: StyleEnum.bodySmall,
-                      maxLine: 2,
-                      color: item.value == key
-                          ? AppColors.colorPrimary1
-                          : colorText,
-                    ),
+                    ],
                   ),
                 );
-              })
-              .values
-              .toList(),
-          value: item.value,
-          onChanged: onChanged,
-          buttonStyleData: const ButtonStyleData(
-            padding: EdgeInsets.only(
-              right: AppDimens.defaultPadding,
+              }).toList();
+            },
+            hint: TextUtils(
+              text: LocaleKeys.personalInfo_hintDropdown.tr,
+              availableStyle: StyleEnum.bodySmall,
+              color: AppColors.colorBasicGrey,
+            ),
+            dropdownStyleData: DropdownStyleData(
+              decoration: BoxDecoration(
+                  color: AppColors.colorWhite,
+                  borderRadius: BorderRadius.circular(
+                    AppDimens.paddingMedium,
+                  )),
+              maxHeight: Get.height / 2.5,
+              offset: const Offset(-0, -5),
+              scrollbarTheme: ScrollbarThemeData(
+                // radius: const Radius.circular(40),
+                thickness: WidgetStateProperty.all<double>(6),
+                thumbVisibility: WidgetStateProperty.all<bool>(true),
+              ),
+            ),
+            isExpanded: true,
+            decoration: InputDecoration(
+              filled: true,
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(AppDimens.paddingMedium),
+                borderSide: BorderSide(
+                  color: fillColor,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(AppDimens.paddingMedium),
+                borderSide: BorderSide(
+                  color: fillColor,
+                ),
+              ),
+              contentPadding: const EdgeInsets.all(0),
+              fillColor: AppColors.colorWhite,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(AppDimens.paddingMedium),
+              ),
+            ),
+            items: mapData
+                .map((key, value) {
+                  return MapEntry(
+                    key,
+                    DropdownItem<dynamic>(
+                      value: key,
+                      child: TextUtils(
+                        text: mapData[key] ?? "",
+                        availableStyle: StyleEnum.bodySmall,
+                        maxLine: 2,
+                        color: item.value == key
+                            ? AppColors.colorPrimary1
+                            : colorText,
+                      ),
+                    ),
+                  );
+                })
+                .values
+                .toList(),
+            valueListenable: valueNotifier,
+            onChanged: onChanged == null
+                ? null
+                : (value) {
+                    valueNotifier.value = value;
+                    item.value = value;
+                    onChanged(value);
+                  },
+            buttonStyleData: const FormFieldButtonStyleData(
+              padding: EdgeInsets.only(
+                right: AppDimens.defaultPadding,
+              ),
+            ),
+            iconStyleData: const IconStyleData(
+              icon: Icon(
+                Icons.arrow_drop_down,
+                color: AppColors.colorNeutral2,
+              ),
             ),
           ),
-          iconStyleData: const IconStyleData(
-            icon: Icon(
-              Icons.arrow_drop_down,
-              color: AppColors.colorNeutral2,
-            ),
-          ),
-        ),
-      ).paddingOnly(left: paddingLeft).paddingOnly(
-            bottom: AppDimens.paddingTitleAndTextForm,
-          ),
+        ).paddingOnly(left: paddingLeft).paddingOnly(
+              bottom: AppDimens.paddingTitleAndTextForm,
+            );
+      },
     );
   }
 
