@@ -31,13 +31,13 @@ dependency_overrides:
 
 dependencies:
   another_flushbar: ^1.12.30
-  app_links: ^6.4.0
-  app_settings: ^6.1.1
+  app_links: ^7.0.0
+  app_settings: ^7.0.0
   asn1lib: ^1.5.3
   auto_size_text: ^3.0.0
   bot_toast: ^4.1.3
-  calendar_date_picker2: ^1.1.9
-  camera: ^0.11.0+2
+  calendar_date_picker2: ^2.0.1
+  camera: ^0.12.0
   carousel_slider: ^5.0.0
   connectivity_plus: ^7.0.0
   cupertino_icons: ^1.0.2
@@ -51,8 +51,8 @@ dependencies:
       url: https://github.com/HVLoc/dmrtd
       ref: master
   dots_indicator: ^4.0.1
-  dotted_border: ^2.1.0
-  dropdown_button2: ^2.3.9
+  dotted_border: ^3.1.0
+  dropdown_button2: ^3.0.0
   file_picker: ^10.2.0
   flutter:
     sdk: flutter
@@ -66,28 +66,28 @@ dependencies:
     git:
       url: https://github.com/HVLoc/flutter_rounded_date_picker.git
       ref: master
-  flutter_secure_storage: ^9.2.4
-  flutter_slidable: ^3.1.1
+  flutter_secure_storage: ^10.0.0
+  flutter_slidable: ^4.0.3
   flutter_svg: ^2.0.9
-  flutter_widget_from_html: ^0.16.0
-  fluttertoast: ^8.2.12
+  flutter_widget_from_html: ^0.17.1
+  fluttertoast: ^9.0.0
   font_awesome_flutter: ^10.6.0
   get: ^4.7.2
-  google_fonts: ^6.2.1
-  google_mlkit_face_detection: ^0.11.1
+  google_fonts: ^8.0.2
+  google_mlkit_face_detection: ^0.13.2
   hive: ^2.2.3
-  image_cropper: ^5.0.1
+  image_cropper: ^11.0.0
   image_picker: ^1.0.4
   image_stitcher:
     git:
       url: https://github.com/HVLoc/image_stitcher.git
   jiffy: ^6.3.2
   loading_overlay_pro: ^2.1.1
-  local_auth: ^2.1.8
+  local_auth: ^3.0.1
   flutter_qr_scanner:
     git:
       url: https://github.com/HVLoc/flutter_qr_scanner
-  package_info_plus: ^8.3.0
+  package_info_plus: ^9.0.0
   path_provider: ^2.1.1
   percent_indicator: ^4.2.3
   permission_handler: ^12.0.0+1
@@ -95,17 +95,17 @@ dependencies:
   #   git:
   #     url: https://github.com/HVLoc/permission_flutter
   #     ref: main
-  pin_code_fields: ^8.0.1
-  pinput: ^5.0.1
+  pin_code_fields: ^9.1.0
+  pinput: ^6.0.2
   pull_to_refresh: ^2.0.0
   screenshot: ^3.0.0
-  share_plus: ^10.1.4
+  share_plus: ^12.0.1
   shimmer: ^3.0.0
-  signature: ^5.4.1
+  signature: ^6.3.0
   syncfusion_flutter_core: ^32.2.8
   syncfusion_flutter_datepicker: ^32.2.8
   syncfusion_flutter_pdfviewer: ^32.2.8
-  upgrader: ^11.3.1
+  upgrader: ^12.5.0
   url_launcher: ^6.3.1
   uuid: ^4.5.1
 
@@ -114,7 +114,7 @@ dev_dependencies:
   #  flutter_test:
   #    sdk: flutter
   flutter_gen_runner: ^5.10.0
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
