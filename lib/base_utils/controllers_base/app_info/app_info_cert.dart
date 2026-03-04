@@ -1,3 +1,4 @@
+import 'package:hilo_ca_integration/base_utils/model_base/base_response_be_cert.dart';
 import 'package:hilo_ca_integration/modules/modules_src.dart';
 import 'package:hilo_ca_integration/shares/shares_src.dart';
 
@@ -34,14 +35,22 @@ class AppInfoCert {
 
   /// Biến chứa hàm logout
   Function()? onLogout;
+  Function(BaseResponseBECert)? onCreateCaSuccess;
 
   void setOnLogout(Function() onLogout) {
     AppInfoCert.instance.onLogout = onLogout;
   }
 
-  void setSdkRequestModel(SdkRequestModel sdkRequestModel) {
+  void setSdkRequestModel({
+    required SdkRequestModel sdkRequestModel,
+    Function()? onLogout,
+    Function(BaseResponseBECert)? onCreateCaSuccess,
+  }) {
     AppInfoCert.instance.sdkRequestModel = sdkRequestModel;
+    AppInfoCert.instance.onLogout = onLogout;
+    AppInfoCert.instance.onCreateCaSuccess = onCreateCaSuccess;
   }
+
   void setNfcInfoData(NfcInfo nfcInfo) {
     nfcInfo.issueDate = convertDateToString(
         convertStringToDate(nfcInfo.issueDate, pattern1), patternDefault);
@@ -109,8 +118,6 @@ class AppInfoCert {
   //     method: sdkRequestModel.method,
   //   );
   // }
-
- 
 
   void clearData() {
     infoDataApp = null;

@@ -38,4 +38,5 @@ class BaseResponseBECert<T> {
         "transId": transId,
         "data": data,
       };
+      
 }

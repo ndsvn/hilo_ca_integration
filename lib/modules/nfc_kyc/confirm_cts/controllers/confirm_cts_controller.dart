@@ -57,7 +57,9 @@ class ConfirmCTSPageController extends BaseGetxController {
         try {
           Get.until((route) => Get.routing.current == AppRoutes.routeHome);
           Get.back();
-          AppInfoCert.instance.onLogout?.call();
+          if (AppInfoCert.instance.onCreateCaSuccess != null) {
+            AppInfoCert.instance.onCreateCaSuccess?.call(value);
+          }
         } catch (e) {}
 
         showFlushNoti(
